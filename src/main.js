@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loader.style.display = 'block';
 
-    try {
+  
       const images = await fetchImages(query);
       loader.style.display = 'none';
 
       if (images.length === 0) {
         iziToast.error({
-          title: 'No Results',
-          message: 'Sorry, there are no images matching your search query. Please try again!',
+          title: 'Error',
+          message: 'Sorry, there are no images matching your search query. Please, try again!',
         });
       } else {
         renderImages(images);
@@ -44,15 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
           lightbox = new SimpleLightbox('.gallery a', {});
         }
       }
-    } catch (error) {
-      loader.style.display = 'none';
-      iziToast.error({
-        title: 'Error',
-        message: 'Something went wrong. Please try again later.',
-      });
-    } finally {
-      input.value = '';
-    }
+
+    input.value = '';
   });
 });
 

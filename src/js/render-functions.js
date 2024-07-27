@@ -6,20 +6,22 @@ export function renderImages(images) {
     return `
       <div class="photo-card">
         <a href="${image.largeImageURL}">
-          <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+
         </a>
+          <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+
         <div class="info">
           <p class="info-item">
-            <b>Likes:</b> ${image.likes}
+            Likes <span>${image.likes}</span>
           </p>
           <p class="info-item">
-            <b>Views:</b> ${image.views}
+            Views <span>${image.views}</span>
           </p>
           <p class="info-item">
-            <b>Comments:</b> ${image.comments}
+            Comments<span>${image.comments}</span>
           </p>
           <p class="info-item">
-            <b>Downloads:</b> ${image.downloads}
+            Downloads <span>${image.downloads}</span>
           </p>
         </div>
       </div>
