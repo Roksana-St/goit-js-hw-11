@@ -33,7 +33,8 @@ export function renderImages(images) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
-    const lightbox = new SimpleLightbox('.gallery a');
+    const lightbox = new SimpleLightbox('.gallery a', {captions: true,
+        captionsDelay: 250});
     lightbox.refresh();
 }
 
