@@ -61,62 +61,26 @@ button:focus {
     align-items: center;
 }
 
+.hidden {
+    display: none;
+}
+
 .loader {
-    width: 48px;
-    height: 48px;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
     border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    border: 3px solid;
-    border-color: #FFF #FFF transparent transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
 }
 
-.loader::after,
-.loader::before {
-    content: '';
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border: 3px solid;
-    border-color: transparent transparent #FF3D00 #FF3D00;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    animation: rotationBack 0.5s linear infinite;
-    transform-origin: center center;
-}
-
-.loader::before {
-    width: 32px;
-    height: 32px;
-    border-color: #FFF #FFF transparent transparent;
-    animation: rotation 1.5s linear infinite;
-}
-
-@keyframes rotation {
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
 
     100% {
         transform: rotate(360deg);
-    }
-}
-
-@keyframes rotationBack {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(-360deg);
     }
 }
 

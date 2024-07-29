@@ -1,13 +1,16 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 export function renderImages(images) {
   const gallery = document.querySelector('.gallery');
   gallery.innerHTML = '';
 
   const markup = images.map(image => {
     return `
-      <div class="photo-card">
+      
         <a href="${image.largeImageURL}">
 
-        </a>
+        <div class="photo-card">
           <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
 
         <div class="info">
@@ -25,8 +28,16 @@ export function renderImages(images) {
           </p>
         </div>
       </div>
-    `;
+    </a>`;
   }).join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+
+    const lightbox = new SimpleLightbox('.gallery a');
+    lightbox.refresh();
+}
+
+export function clearGallery() {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = '';
 }
